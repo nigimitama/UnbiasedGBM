@@ -20,7 +20,7 @@ data.rename(columns={c: f"feat{i}" for i, c in enumerate(data.columns)}, inplace
 cat_feats = [c for c in data.select_dtypes(exclude=np.number).columns]
 categorical_indicator = [(c in cat_feats) for c in data.columns]
 
-from utils import prepare_data
+from examples.utils import prepare_data
 
 data = prepare_data(data, categorical_indicator, "advance2.5")
 
